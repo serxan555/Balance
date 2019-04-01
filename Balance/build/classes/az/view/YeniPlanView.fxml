@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="832.0" styleClass="newPage" stylesheets="@../balance/image.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.controller.YeniPlanController">
+   <children>
+      <HBox prefHeight="550.0" prefWidth="832.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="550.0" prefWidth="280.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="30.0" prefWidth="296.0" text="Plan Adı">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" top="70.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.48362760200655674" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+                  <TextField fx:id="planAdi" prefHeight="30.0" promptText="Plan Adı" style="-fx-background-radius: 30;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" top="30.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label alignment="CENTER" prefHeight="17.0" prefWidth="328.0" text="Başlanğıc tarix">
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.48362760200655674" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="baslaTarix" prefHeight="30.0" prefWidth="735.0" promptText="Başlanğıc tarix">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="175.0" prefHeight="17.0" prefWidth="328.0" text="Son tarix">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.48362760200655674" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <DatePicker fx:id="sonTarix" layoutX="10.0" layoutY="90.0" prefHeight="30.0" prefWidth="844.0" promptText="Son tarix">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </DatePicker>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="245.0" prefHeight="17.0" prefWidth="328.0" text="Ayrılan məbləğ">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.48362760200655674" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </Label>
+                  <TextField fx:id="amountTextField" layoutX="160.0" layoutY="60.0" onKeyReleased="#keyMebleg" prefHeight="30.0" promptText="Ayrılan məbləğ" style="-fx-background-radius: 30;">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" top="5.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#daxilEt" prefHeight="40.0" prefWidth="261.0" style="-fx-background-radius: 30;" text="Daxil Et">
+                     <VBox.margin>
+                        <Insets left="20.0" right="10.0" top="50.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.48362760200655674" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="550.0" prefWidth="555.0">
+               <children>
+                  <TableView fx:id="cedvel" onMouseClicked="#cedvelClick" prefHeight="378.0" prefWidth="454.0">
+                    <columns>
+                      <TableColumn fx:id="kateqoriyaCol" prefWidth="227.0" text="Kateqoriya" />
+                      <TableColumn fx:id="amountCol" prefWidth="226.0" text="Ayrılan Məbləğ" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets left="50.0" right="50.0" top="80.0" />
+                     </VBox.margin>
+                  </TableView>
+                  <Label fx:id="umumiMebleg" alignment="CENTER" prefHeight="30.0" prefWidth="585.0">
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.48362760200655674" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1365.0" styleClass="balanceview" stylesheets="@../balance/image.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.controller.BalanceController">
+   <children>
+      <BorderPane layoutX="159.0" layoutY="60.0" prefHeight="700.0" prefWidth="1365.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="700.0" prefWidth="350.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="MENU">
+                     <font>
+                        <Font name="System Bold Italic" size="43.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#00ccff" />
+                              <Stop color="#8600ff" offset="0.5095785440613027" />
+                              <Stop color="#00ccff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <VBox.margin>
+                        <Insets bottom="15.0" left="85.0" top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Accordion prefHeight="605.0" prefWidth="306.0">
+                    <panes>
+                      <TitledPane text="Gəlirlər və Xərclər">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="accardion" stylesheets="@../balance/image.css">
+                                 <children>
+                                    <VBox prefHeight="492.0" prefWidth="284.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ComboBox fx:id="gelirComboBox" onAction="#selectGelir" prefHeight="30.0" prefWidth="410.0" promptText="Gəlir Kateqoriyası" style="-fx-background-radius: 30;">
+                                             <VBox.margin>
+                                                <Insets top="20.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                          <ComboBox layoutX="10.0" layoutY="10.0" onAction="#selectXercler" prefHeight="30.0" prefWidth="410.0" promptText="Xərclər Kateqoriyası" style="-fx-background-radius: 30;" fx:id="xerclerComboBox">
+                                             <VBox.margin>
+                                                <Insets top="30.0" />
+                                             </VBox.margin>
+                                          </ComboBox>
+                                          <HBox prefHeight="20.0" prefWidth="260.0">
+                                             <children>
+                                                <RadioButton fx:id="gelirRadio" mnemonicParsing="false" onMouseClicked="#gelirClick" prefHeight="20.0" prefWidth="152.0" text="Gəlir">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="toggleRadio" />
+                                                   </toggleGroup>
+                                                   <HBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="15.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop color="#833ab4" />
+                                                            <Stop color="#fd1d1d" offset="0.5487222024726469" />
+                                                            <Stop color="#fcb045" offset="1.0" />
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                </RadioButton>
+                                                <RadioButton mnemonicParsing="false" onMouseClicked="#xercClick" prefHeight="20.0" prefWidth="152.0" text="Xərclər" toggleGroup="$toggleRadio" fx:id="xerclerRadio">
+                                                   <HBox.margin>
+                                                      <Insets top="30.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="15.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop color="#833ab4" />
+                                                            <Stop color="#fd1d1d" offset="0.5487222024726469" />
+                                                            <Stop color="#fcb045" offset="1.0" />
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                </RadioButton>
+                                             </children>
+                                          </HBox>
+                                          <TextField fx:id="adTextField" prefHeight="30.0" promptText="Ad" style="-fx-background-radius: 30;">
+                                             <VBox.margin>
+                                                <Insets bottom="30.0" top="30.0" />
+                                             </VBox.margin>
+                                          </TextField>
+                                          <HBox prefHeight="33.0" prefWidth="260.0">
+                                             <children>
+                                                <Button mnemonicParsing="false" onAction="#yaddaSaxla" prefHeight="31.0" prefWidth="130.0" style="-fx-background-radius: 30;" text="Yadda saxla">
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="15.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop color="#833ab4" />
+                                                            <Stop color="#fd1d1d" offset="0.6353043409566692" />
+                                                            <Stop color="#fcb045" offset="1.0" />
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin></Button>
+                                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#sil" prefHeight="30.0" prefWidth="130.0" style="-fx-background-radius: 30;" text="Sil">
+                                                   <HBox.margin>
+                                                      <Insets left="44.0" right="5.0" />
+                                                   </HBox.margin>
+                                                   <font>
+                                                      <Font name="System Bold Italic" size="15.0" />
+                                                   </font>
+                                                   <textFill>
+                                                      <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                                         <stops>
+                                                            <Stop color="#833ab4" />
+                                                            <Stop color="#fd1d1d" offset="0.6353043409566692" />
+                                                            <Stop color="#fcb045" offset="1.0" />
+                                                         </stops>
+                                                      </LinearGradient>
+                                                   </textFill>
+                                                </Button>
+                                             </children>
+                                          </HBox>
+                                          <Button mnemonicParsing="false" onAction="#yeniQeydiyyat" prefHeight="45.0" prefWidth="410.0" style="-fx-background-radius: 50;" text="Yeni Qeydiyyatı">
+                                             <VBox.margin>
+                                                <Insets top="30.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                             <textFill>
+                                                <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop color="#833ab4" />
+                                                      <Stop color="#fd1d1d" offset="0.6353043409566692" />
+                                                      <Stop color="#fcb045" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Button>
+                                          <Button layoutX="10.0" layoutY="330.0" mnemonicParsing="false" onAction="#etrafliHesabat" prefHeight="45.0" prefWidth="410.0" style="-fx-background-radius: 50;" text="Ətraflı hesabat">
+                                             <font>
+                                                <Font name="System Bold Italic" size="15.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets top="30.0" />
+                                             </VBox.margin>
+                                             <textFill>
+                                                <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop color="#833ab4" />
+                                                      <Stop color="#fd1d1d" offset="0.6353043409566692" />
+                                                      <Stop color="#fcb045" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#833ab4" />
+                                    <Stop color="#fd1d1d" offset="0.5487222024726469" />
+                                    <Stop color="#fcb045" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                      </TitledPane>
+                      <TitledPane text="Planlar">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="accardion" stylesheets="@../balance/image.css">
+                                 <children>
+                                    <VBox layoutX="49.0" layoutY="93.0" prefHeight="492.0" prefWidth="284.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <ListView fx:id="planlar" onMouseClicked="#onSelectPlan" prefHeight="419.0" prefWidth="304.0" />
+                                          <Button mnemonicParsing="false" onAction="#yeniPlan" prefHeight="50.0" prefWidth="316.0" style="-fx-background-radius: 30;" text="Yeni Plan">
+                                             <VBox.margin>
+                                                <Insets top="15.0" />
+                                             </VBox.margin>
+                                             <font>
+                                                <Font name="System Bold Italic" size="20.0" />
+                                             </font>
+                                             <textFill>
+                                                <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                                   <stops>
+                                                      <Stop color="#833ab4" />
+                                                      <Stop color="#fd1d1d" offset="0.6353043409566692" />
+                                                      <Stop color="#fcb045" offset="1.0" />
+                                                   </stops>
+                                                </LinearGradient>
+                                             </textFill>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
+                        </content>
+                           <font>
+                              <Font name="System Bold Italic" size="15.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#833ab4" />
+                                    <Stop color="#fd1d1d" offset="0.5487222024726469" />
+                                    <Stop color="#fcb045" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                      </TitledPane>
+                    </panes>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Accordion>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="cemBalans">
+                     <VBox.margin>
+                        <Insets left="500.0" top="15.0" />
+                     </VBox.margin>
+                     <textFill>
+                        <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#00ccff" />
+                              <Stop color="#8600ff" offset="0.5249042145593864" />
+                              <Stop color="#00ccff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold Italic" size="40.0" />
+                     </font>
+                  </Label>
+                  <PieChart fx:id="pie" prefHeight="360.0" prefWidth="1015.0">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </PieChart>
+                  <HBox fx:id="hboxLabel" prefHeight="17.0" prefWidth="1015.0">
+                     <children>
+                        <Label fx:id="meblegLabel">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="20.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#420072" />
+                                    <Stop color="#8600ff" offset="0.5095785440613023" />
+                                    <Stop color="#420072" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="baslaTarixLabel" layoutX="10.0" layoutY="10.0">
+                           <HBox.margin>
+                              <Insets left="100.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="20.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#420072" />
+                                    <Stop color="#8600ff" offset="0.5095785440613023" />
+                                    <Stop color="#420072" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                        <Label fx:id="sonTarixLabel" layoutX="38.0" layoutY="10.0">
+                           <HBox.margin>
+                              <Insets left="100.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="System Bold Italic" size="20.0" />
+                           </font>
+                           <textFill>
+                              <LinearGradient cycleMethod="REPEAT" endX="1.0" endY="1.0">
+                                 <stops>
+                                    <Stop color="#420072" />
+                                    <Stop color="#8600ff" offset="0.5095785440613023" />
+                                    <Stop color="#420072" offset="1.0" />
+                                 </stops>
+                              </LinearGradient>
+                           </textFill>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="cedvel" opacity="0.9" prefHeight="217.0" prefWidth="1005.0">
+                    <columns>
+                      <TableColumn prefWidth="167.0" text="Xərc Kateqoriyaları" fx:id="xerclerCol" />
+                      <TableColumn fx:id="ayrilmisMeblegCol" prefWidth="167.0" text="Ayrılmış məbləğ" />
+                        <TableColumn fx:id="progresBarCol" prefWidth="167.0">
+                           <graphic>
+                              <HBox prefHeight="0.0" prefWidth="163.0">
+                                 <children>
+                                    <ProgressBar fx:id="barbar" prefHeight="18.0" prefWidth="167.0" progress="0.0" />
+                                 </children>
+                              </HBox>
+                           </graphic></TableColumn>
+                        <TableColumn prefWidth="167.0" text="Xərclənmiş məbləğ" fx:id="xerclenmisMeblegCol" />
+                        <TableColumn fx:id="faizCol" prefWidth="167.0" text="Faiz dərəcəsi %" />
+                        <TableColumn fx:id="tempCol" prefWidth="169.0" text="Temp dərəcəsi" />
+                    </columns>
+                     <VBox.margin>
+                        <Insets right="10.0" />
+                     </VBox.margin>
+                  </TableView>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

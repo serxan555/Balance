@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="500.0" styleClass="newPage" stylesheets="@../balance/image.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.controller.YeniQeydiyyatController">
+   <children>
+      <VBox layoutX="89.0" layoutY="75.0" prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="text">
+               <VBox.margin>
+                  <Insets left="100.0" top="30.0" />
+               </VBox.margin>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00afff" />
+                        <Stop color="#ff0093" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="qeyd" prefHeight="30.0" promptText="Qeyd" style="-fx-background-radius: 30;">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="50.0" />
+               </VBox.margin>
+            </TextField>
+            <TextField fx:id="mebleg" layoutX="10.0" layoutY="10.0" prefHeight="30.0" promptText="Məbləğ" style="-fx-background-radius: 30;">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="30.0" />
+               </VBox.margin>
+            </TextField>
+            <DatePicker fx:id="tarix" prefHeight="30.0" prefWidth="350.0" promptText="Tarix">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="30.0" />
+               </VBox.margin>
+            </DatePicker>
+            <Button mnemonicParsing="false" onAction="#daxilEt" prefHeight="40.0" prefWidth="373.0" style="-fx-background-radius: 30;" text="Daxil et">
+               <VBox.margin>
+                  <Insets left="100.0" right="100.0" top="50.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="550.0" prefWidth="700.0" styleClass="newPage" stylesheets="@../balance/image.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.controller.XercEtrafliHesabatController">
+   <children>
+      <VBox layoutX="41.0" layoutY="38.0" prefHeight="400.0" prefWidth="500.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="73.0" prefWidth="700.0">
+               <children>
+                  <Label text="Başlanğıc tarix:">
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.53912390883596" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="20.0" right="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="baslangicTarix">
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Label layoutX="10.0" layoutY="10.0" text="Son tarix:">
+                     <font>
+                        <Font name="System Bold Italic" size="20.0" />
+                     </font>
+                     <textFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#833ab4" />
+                              <Stop color="#fd1d1d" offset="0.53912390883596" />
+                              <Stop color="#0069ff" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </textFill>
+                     <HBox.margin>
+                        <Insets left="40.0" right="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="sonTarix" layoutX="38.0" layoutY="10.0">
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#filterEt" prefHeight="44.0" prefWidth="307.0" style="-fx-background-radius: 50;" text="Filtr Et">
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#833ab4" />
+                        <Stop color="#fd1d1d" offset="0.53912390883596" />
+                        <Stop color="#fcb045" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" left="200.0" />
+               </VBox.margin>
+            </Button>
+            <TableView fx:id="cedvel" onMouseClicked="#onClick" opacity="0.6" prefHeight="356.0" prefWidth="700.0">
+              <columns>
+                <TableColumn fx:id="idCol" prefWidth="75.0" text="İd" />
+                  <TableColumn fx:id="kateqoriyaCol" prefWidth="168.0" text="Kateqoriya" />
+                  <TableColumn fx:id="meblegCol" prefWidth="129.0" text="Məbləğ" />
+                <TableColumn fx:id="qeydCol" prefWidth="182.0" text="Qeyd" />
+                  <TableColumn fx:id="tarixCol" prefWidth="145.0" text="Tarix" />
+              </columns>
+            </TableView>
+            <Label fx:id="cemBalans" alignment="CENTER" prefHeight="42.0" prefWidth="700.0">
+               <font>
+                  <Font name="System Bold Italic" size="20.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#833ab4" />
+                        <Stop color="#fd1d1d" offset="0.53912390883596" />
+                        <Stop color="#fcb045" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

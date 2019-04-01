@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="700.0" styleClass="newPage" stylesheets="@../balance/image.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="az.controller.RegisterController">
+   <children>
+      <VBox layoutX="269.0" layoutY="133.0" prefHeight="500.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="99.0" prefWidth="700.0" text="Sign Up">
+               <font>
+                  <Font name="System Bold Italic" size="36.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#00b4ff" />
+                        <Stop color="#ff00b7" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <HBox prefHeight="126.0" prefWidth="700.0">
+               <children>
+                  <TextField fx:id="name" prefHeight="30.0" prefWidth="220.0" promptText="Name" style="-fx-background-radius: 30;">
+                     <HBox.margin>
+                        <Insets left="100.0" top="50.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="surname" prefHeight="30.0" prefWidth="220.0" promptText="Surname" style="-fx-background-radius: 30;">
+                     <HBox.margin>
+                        <Insets left="50.0" top="50.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox prefHeight="76.0" prefWidth="700.0">
+               <children>
+                  <TextField fx:id="username" prefHeight="30.0" prefWidth="220.0" promptText="Username" style="-fx-background-radius: 30;">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </TextField>
+                  <TextField fx:id="email" prefHeight="30.0" prefWidth="220.0" promptText="Email" style="-fx-background-radius: 30;">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="235.0" prefHeight="81.0" prefWidth="700.0">
+               <children>
+                  <PasswordField fx:id="password" prefHeight="30.0" prefWidth="220.0" promptText="Password" style="-fx-background-radius: 30;">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </PasswordField>
+                  <PasswordField fx:id="cPassword" layoutX="10.0" layoutY="10.0" prefHeight="30.0" prefWidth="220.0" promptText="Confirm Password" style="-fx-background-radius: 30;">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </PasswordField>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#signIn" prefHeight="50.0" prefWidth="490.0" style="-fx-background-radius: 30;" text="Sign In">
+               <VBox.margin>
+                  <Insets left="100.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="22.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="MAGENTA" />
+                        <Stop color="#00b2ff" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
